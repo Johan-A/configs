@@ -22,9 +22,12 @@ set smartindent
 
 set nu
 
+set hlsearch
+
 "nnoremap <silent> <CR> nohlsearch<CR>
 "remap increment number for screen/tmux friendlyness
 nnoremap <C-c> <C-a>
+nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 
 "shortcut for stripping whitespace from files
 nnoremap <C-w>w :%s/\s\+$//e<CR>
@@ -76,6 +79,9 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
 nnoremap g* :Ggrep <cword><cr><cr>:copen<cr>
 nnoremap gr :Ggrep<space>
 
+:set shellcmdflag=-ic
+nnoremap bb :!rg <cword>
+
 " MRU.vim shortcuts
 nnoremap <Leader>m :MRU<cr>
 
@@ -110,3 +116,14 @@ let g:syntastic_always_populate_loc_list=1
 let g:syntastic_auto_loc_list=1
 
 let g:javascript_enable_domhtmlcss=1
+
+" Navigate 4x faster when holding down Ctrl
+nmap <c-j> 4j
+nmap <c-k> 4k
+nmap <c-h> 4h
+nmap <c-l> 4l
+
+set switchbuf+=usetab,newtab
+
+nnoremap gr :Rg<cr>
+nnoremap gb :Gblame<cr>

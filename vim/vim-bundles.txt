@@ -12,3 +12,4 @@ https://github.com/mkitt/tabline.vim.git
 https://github.com/pangloss/vim-javascript.git
 https://github.com/bling/vim-airline.git
 https://github.com/derekwyatt/vim-scala.git
+https://github.com/jremmen/vim-ripgrep.git
